@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <imageurls translate="label">
+            <label>Image URLs</label>
+            <tab>catalog</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <images translate="label">
+                    <label>Product Images</label>
+                    <comment><![CDATA[<p>This module is designed load product images via URL.</p>]]></comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <relative_paths_enabled translate="label comment">
+                            <label>Use Relative Paths</label>
+                            <comment><![CDATA[Turning this option on allows you to import relative paths for image Urls. Example if you multimedia server is always going to be assets.domain.com you can enable this option. Then in your import file you dont need to put the full URL to each image, you can just use the relative path.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </relative_paths_enabled>
+                        <base_url translate="label comment">
+                            <label>Base Image Server URL</label>
+                            <comment><![CDATA[Base Image Server Path (CDN or Image Server. Include trailing / slash.)]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><relative_paths_enabled>1</relative_paths_enabled></depends>
+                        </base_url>
+                        <use_dynamic_resizing translate="label comment">
+                            <label>Use Dynamic Resizing</label>
+                            <comment><![CDATA[Some CDN's and Multimedia servers support dynamic resizing via including a parameter in the URL. If your using a Multimedia server or DNS that supports this you can enable this option.]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><enabled>1</enabled></depends>
+                        </use_dynamic_resizing>
+                        <resize_param translate="label comment">
+                            <label>Resize Paramater</label>
+                            <comment><![CDATA[Enter the paramater your Multimedia server or CDN supports for resizing. For example enter "size" if your resize paramter is listed in image URLS like "http://domain.com/image.jpg?size=500" )]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><use_dynamic_resizing>1</use_dynamic_resizing></depends>
+                        </resize_param>
+                        <image_size translate="label">
+                            <label>image size</label>
+                            <comment><![CDATA[Map Magento "image" attribute to &boundedSize=value]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><use_dynamic_resizing>1</use_dynamic_resizing></depends>
+                        </image_size>
+                        <small_image_size translate="label">
+                            <label>small_image size</label>
+                            <comment><![CDATA[Map Magento "small_image" attribute to &boundedSize=value]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><use_dynamic_resizing>1</use_dynamic_resizing></depends>
+                        </small_image_size>
+                        <thumbnail_size translate="label">
+                            <label>small_image size</label>
+                            <comment><![CDATA[Map Magento "thumbnail" attribute to &boundedSize=value]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><use_dynamic_resizing>1</use_dynamic_resizing></depends>
+                        </thumbnail_size>
+                    </fields>
+                </images>
+            </groups>
+        </imageurls>
+    </sections>
+</config>

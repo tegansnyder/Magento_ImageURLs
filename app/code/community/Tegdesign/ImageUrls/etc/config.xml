@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tegdesign_ImageUrls>
+            <version>0.0.1</version>
+        </Tegdesign_ImageUrls>
+    </modules>
+
+    <global>
+
+        <models>
+			<catalog>
+				<rewrite>
+					<product_image>Tegdesign_ImageUrls_Model_Catalog_Product_Image</product_image>
+				</rewrite>
+			</catalog>
+        </models>
+
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_helper_form_gallery_content>Tegdesign_ImageUrls_Block_Gallery</catalog_product_helper_form_gallery_content>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+
+        <helpers>
+            <imageurls>
+                <class>Tegdesign_ImageUrls_Helper</class>
+            </imageurls>
+            <catalog>
+                <rewrite>
+                    <image>Tegdesign_ImageUrls_Helper_Image</image>
+                </rewrite>
+            </catalog>
+        </helpers>
+
+    </global>
+
+    <default>
+        <imageurls>
+            <images>
+                <enabled>0</enabled>
+                <image_size>370</image_size>
+                <small_image_size>135</small_image_size>
+                <thumbnail_size>75</thumbnail_size>
+            </images>
+        </imageurls>
+    </default>
+</config>
